@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio - Stages & Expériences</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+  
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f7f9fc;
+      color: #1f2937;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+    }
+
+    
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(255,255,255,0.95);
+      border-bottom: 1px solid #ddd;
+      z-index: 1000;
+    }
+
+    .nav {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+    }
+
+    .logo { font-weight: bold; font-size: 1.5rem; color: #7548a8; }
+    .Snav { list-style: none; display: flex; gap: 1.5rem; }
+    .Snav a { color: #1f2937; font-weight: 500; transition: 0.3s; }
+    .Snav a:hover { color: #f59e0b; }
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 4px;
+    }
+    .menu-toggle span {
+      width: 25px;
+      height: 3px;
+      background: #1f2937;
+      border-radius: 2px;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; flex-direction: column; background: rgba(0,0,0,0.8); position: absolute; top: 60px; right: 0; width: 200px; padding: 1rem; border-radius: 8px; }
+      .nav-links.show { display: flex; }
+      .nav-links a { color: white; }
+      .menu-toggle { display: flex; }
+    }
+
+    main { padding-top: 80px; }
+.nav-link.active {
+  color: #f59e0b; 
+}
+
+
+
+    .section-header { text-align: center; margin-bottom: 50px; }
+    .section-header h1 { font-size: 36px; margin-bottom: 10px; color: #7548a8; }
+    .section-header p { font-size: 18px; color: #4b5563; }
+
+
+
+    .experience-section {
+      max-width: 1200px;
+      margin: 100px auto 50px;
+      padding: 50px 20px;
+      background: linear-gradient(135deg, #f8f9ff 0%, #f5f7ff 100%);
+      border-radius: 20px;
+    }
+
+    .title {
+      text-align: center;
+      font-size: 2.8rem;
+      font-weight: 800;
+      margin-bottom: 50px;
+     
+      color: #7548a8;
+    }
+
+    .experience-list {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .experience-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 25px;
+      padding: 20px;
+      background: #ffffff;
+      border-radius: 16px;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    .experience-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 32px rgba(0, 102, 255, 0.15);
+    }
+
+    .experience-item::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 4px;
+      background: linear-gradient(180deg, #0066ff, #00d4ff);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      border-radius: 4px 0 0 4px;
+    }
+
+    .experience-item:hover::before { opacity: 1; }
+
+    .experience-icon {
+      flex-shrink: 0;
+    }
+
+    .experience-img {
+      width: 90px;
+      height: 90px;
+      border-radius: 16px;
+      border: 3px ;
+      object-fit: cover;
+      transition: transform 0.3s ease, filter 0.3s ease;
+    }
+.nav-links a.active { color: #f59e0b; }
+    .experience-item:hover .experience-img {
+      transform: scale(1.08);
+      filter: brightness(1.1);
+    }
+
+    .experience-content h3 {
+      font-size: 1.4rem;
+      margin-bottom: 12px;
+      font-weight: 700;
+    }
+
+    .experience-content p {
+      font-size: 0.95rem;
+      color: #4a4a6a;
+      margin-bottom: 8px;
+      line-height: 1.5;
+    }
+
+    .experience-content strong { color: #0066ff; font-weight: 600; }
+
+.btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 6px 12px;
+  background: #ffffff; 
+  color: #f59e0b;     
+  text-decoration: none;
+  border-radius: 6px;
+  border: 2px solid #f59e0b; 
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background: #f59e0b; 
+  color: #ffffff;      
+}
+
+    @media (max-width: 768px) {
+      .experience-item { flex-direction: column; text-align: center; }
+      .experience-icon { margin-bottom: 15px; display: flex; justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+ 
+  <header>
+    <div class="nav">
+      <div class="logo"><span class="logo-text">Portfolio</span></div>
+      <ul class="Snav">
+        <li><a href="../index.html" >Accueil</a></li>
+        <li><a href="parcours.html" >Parcours</a></li>
+        <li><a href="stages.html" class="nav-link active">Stages</a></li>
+
+        <li><a href="projet.html" >Projets</a></li>
+        <li><a href="competance.html" >Compétences</a></li>
+        <li><a href="contact.html" >Contact</a></li>
+      </ul>
+      <button class="menu-toggle" id="menuToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+ 
+  <section class="experience-section">
+    <h2 class="title">💼 Stages & Expériences</h2>
+
+    <div class="experience-list">
+   
+    
+      
+      <div class="experience-item">
+        <div class="experience-icon">
+          <img src="../assets/dra.png" alt="KappaTest" class="experience-img">
+        </div>
+        <div class="experience-content">
+          <h3>Application bureautique - KappaTest</h3>
+          <p><strong>Entreprise :</strong> Draexlmaier</p>
+          <p><strong>Date :</strong> Août 2024</p>
+          <p><strong>Description :</strong></p>
+          <ul>
+            <li>Application bureautique multiplateforme pour évaluation des compétences avec Electron.</li>
+            <li>Interface utilisateur professionnelle et responsive.</li>
+            <li>Intégration Node.js pour gestion des questionnaires et réponses.</li>
+            <li>Validation de l’état d’avancement pour les employés.</li>
+          </ul>
+        </div>
+        <a href="kappatest.html" target="_blank" class="btn">Voir plus ▶</a>
+      </div>
+
+      
+      <div class="experience-item">
+        <div class="experience-icon">
+          <img src="../assets/icon-asm.png" alt="Ready4EVENT" class="experience-img">
+        </div>
+        <div class="experience-content">
+          <h3>Projet de fin d’études - Ready4EVENT</h3>
+          <p><strong>Entreprise :</strong> ASM</p>
+          <p><strong>Date :</strong> Février 2025</p>
+          <p><strong>Description :</strong></p>
+          <ul>
+            <li>Application web pour la gestion d’événements.</li>
+            <li>Backend sécurisé avec Laravel, frontend Angular.</li>
+            <li>Module IA en Python pour recommandations personnalisées.</li>
+            <li>Gestion simple des utilisateurs, événements, inscriptions et notifications.</li>
+            <li>Suivi en temps réel et expérience utilisateur optimisée.</li>
+          </ul>
+        </div>
+        <a href="ready4event.html" target="_blank" class="btn">Voir plus ▶</a>
+      </div>
+    </div>
+      <div class="experience-item">
+        <div class="experience-icon">
+          <img src="../assets/icon-asm.png" alt="ASM" class="experience-img">
+        </div>
+        <div class="experience-content">
+          <h3>Développeur Full-Stack - Plateforme de gestion enseignants/étudiants</h3>
+          <p><strong>Entreprise :</strong> ASM</p>
+          <p><strong>Date :</strong> Juillet 2024</p>
+          <p><strong>Description :</strong></p>
+          <ul>
+            <li>Développement d’une plateforme de gestion pour enseignants et étudiants.</li>
+            <li>Front-end : Angular, Back-end : Laravel.</li>
+            <li>Mise en place d’un système d’authentification sécurisé.</li>
+          </ul>
+        </div>
+        
+      </div>
+
+  </section>
+
+  <script>
+    const toggle = document.getElementById("menuToggle");
+    const nav = document.querySelector(".nav-links");
+    toggle.onclick = () => nav.classList.toggle("show");
+  </script>
+</body>
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projet Ready4EVENT</title>
+
+  
+  <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f7f9fc;
+      color: #1f2937;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+    }
+
+    
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(255,255,255,0.95);
+      border-bottom: 1px solid #ddd;
+      z-index: 1000;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+    }
+
+    .logo { font-weight: bold; font-size: 1.5rem; color: #7548a8; }
+    .nav-links { list-style: none; display: flex; gap: 1.5rem; }
+    .nav-links a { color: #1f2937; font-weight: 500; transition: 0.3s; }
+    .nav-links a:hover { color: #f59e0b; }
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 4px;
+    }
+    .menu-toggle span {
+      width: 25px;
+      height: 3px;
+      background: #1f2937;
+      border-radius: 2px;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; flex-direction: column; background: rgba(0,0,0,0.8); position: absolute; top: 60px; right: 0; width: 200px; padding: 1rem; border-radius: 8px; }
+      .nav-links.show { display: flex; }
+      .nav-links a { color: white; }
+      .menu-toggle { display: flex; }
+    }
+   
+    main {
+      max-width: 1000px;
+      margin: auto;
+      padding: 120px 20px 60px;
+    }
+
+    .section-header { text-align: center; margin-bottom: 50px; }
+    .section-header h1 { font-size: 36px; color: #7548a8; margin-bottom: 10px; }
+    .section-header p { font-size: 18px; color: #4b5563; }
+
+ 
+    .project {
+      display: flex;
+      justify-content: center;
+      margin: 30px 0;
+    }
+    .video {
+  display: flex;
+  justify-content: center;
+  margin: 40px 0;
+}
+
+.video-btn {
+  display: inline-block;
+  padding: 14px 28px;
+  background: linear-gradient(135deg, #7548a8, #9f67ff);
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(117, 72, 168, 0.3);
+  transition: all 0.3s ease;
+}
+
+.video-btn:hover {
+  background: linear-gradient(135deg, #5b3691, #7e4ce0);
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 12px 25px rgba(117, 72, 168, 0.4);
+}
+
+.video-btn:active {
+  transform: scale(0.98);
+}
+
+    .project-description {
+      background: white;
+      padding: 24px;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      margin-bottom: 40px;
+    }
+    .project-description h3 { color: #f59e0b; margin-bottom: 10px; }
+    .project-description p { margin-bottom: 10px; }
+    .project-description ul { margin-left: 20px; list-style-type: disc; }
+
+    
+    .retourne {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      border: solid  #f59e0b;
+      color: black;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: 0.3s;
+    }
+    .retourne:hover { background: #d97706; }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="nav-container">
+    <div class="logo">Portfolio</div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="parcours.html">Parcours</a></li>
+      <li><a href="experiences.html">Stages</a></li>
+      <li><a href="projet.html">Projets</a></li>
+      <li><a href="competance.html">Compétences</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="menu-toggle" id="menuToggle">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="section-header">
+    <h1>Projet de fin d’études - Ready4EVENT</h1>
+    <p>Stage / Projet ASM - Février 2025</p>
+  </div>
+
+<div class="video">
+  <a href="https://drive.google.com/file/d/1BRztDsaZ1mXGZ-0ytiOZE6kHH5iOLsuO/preview" target="_blank" class="video-btn">
+    ▶ Voir la démonstration du projet
+  </a>
+</div>
+
+  <div class="project-description">
+    <h3>Description détaillée :</h3>
+    <p><strong>Entreprise :</strong> ASM</p>
+    <p><strong>Date :</strong> Février 2025</p>
+    <ul>
+      <li>Application web pour la gestion d’événements.</li>
+      <li>Backend sécurisé avec Laravel, frontend intuitif avec Angular.</li>
+      <li>Module IA en Python pour recommandations personnalisées.</li>
+      <li>Gestion simple et efficace des utilisateurs, événements, inscriptions et notifications.</li>
+      <li>Suivi en temps réel et expérience utilisateur optimisée.</li>
+    </ul>
+  </div>
+
+  <a href="stages.html" class="retourne">← Retour aux stages</a>
+</main>
+
+
+</body>
+</html>
